@@ -1,0 +1,46 @@
+$colors: rgb(235, 230, 230),rgb(219, 209, 209),rgb(223, 211, 211),rgb(221, 196, 196),rgb(238, 217, 217),rgb(182, 172, 172);
+
+
+
+body, html {
+    height: 100%;    
+}
+
+body {
+    margin: 0;
+    font-family: 'Motserrat', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin: 5rem;
+} 
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-gap: 1rem;
+    cursor: pointer;
+
+    .card {
+        transition: transform 1s;
+
+        @for $i from 1 through 6 {
+            &:nth-of-type(#{$i}) {
+                background: nth($colors, $i);
+            }
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .info {
+            padding: 1rem;
+        }
+    }
+}
